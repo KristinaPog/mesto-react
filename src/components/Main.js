@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react";
 import api from "../utils/Api";
 import Card from './Card.js'
 
