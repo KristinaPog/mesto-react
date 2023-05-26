@@ -100,7 +100,7 @@ function App() {
             maxLength="200" />
           <span className="popup__input-error avatar-error"></span>
         </PopupWithForm>
-        <ImagePopup card={selectedCard} onClose={closeAllPopups}></ImagePopup>
+        <ImagePopup card={selectedCard} isOpen={selectedCard} onClose={closeAllPopups}></ImagePopup>
       </div>
     </div>
   );
