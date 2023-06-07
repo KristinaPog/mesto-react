@@ -16,7 +16,7 @@ function AddPlacePopup ({isOpen, onClose, onAddPlace}) {
   React.useEffect(() => {
     setCardName('');
     setCardImage('');
-  }, []);
+  }, [isOpen]);
 
   function handleSubmit (evt) {
     evt.preventDefault();
@@ -44,6 +44,7 @@ function AddPlacePopup ({isOpen, onClose, onAddPlace}) {
               id="place-name"
               required minLength="2"
               maxLength="30"
+              value={cardName}
               onChange={handleChangeCardName} />
             <span className="popup__input-error place-name-error"></span>
             <input
@@ -54,6 +55,7 @@ function AddPlacePopup ({isOpen, onClose, onAddPlace}) {
               className="popup__input popup__input_type_place-image"
               id="place-image"
               required minLength="2"
+              value={cardImage}
               maxLength="200" 
               onChange={handleChangeCardImage} />
             <span className="popup__input-error place-image-error"></span>
