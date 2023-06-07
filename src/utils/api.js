@@ -76,9 +76,9 @@ class Api {
       .then(this._checkingTheServerResponse)
   }
 
-  setLike(cardId) {
+  changeLikeCardStatus(cardId, isLiked) {
     return fetch(`${this._url}cards/${cardId}/likes`, {
-      method: "PUT",
+      method: `${!isLiked ? 'DELETE' : 'PUT'}`,
       headers: {
         authorization: this._user,
         'Content-Type': 'application/json'
@@ -87,16 +87,30 @@ class Api {
       .then(this._checkingTheServerResponse)
   }
 
-  deleteLike(cardId) {
-    return fetch(`${this._url}cards/${cardId}/likes`, {
-      method: "DELETE",
-      headers: {
-        authorization: this._user,
-        'Content-Type': 'application/json'
-      }
-    })
-      .then(this._checkingTheServerResponse)
-  }
+
+  
+
+  // setLike(cardId) {
+  //   return fetch(`${this._url}cards/${cardId}/likes`, {
+  //     method: "PUT",
+  //     headers: {
+  //       authorization: this._user,
+  //       'Content-Type': 'application/json'
+  //     }
+  //   })
+  //     .then(this._checkingTheServerResponse)
+  // }
+
+  // deleteLike(cardId) {
+  //   return fetch(`${this._url}cards/${cardId}/likes`, {
+  //     method: "DELETE",
+  //     headers: {
+  //       authorization: this._user,
+  //       'Content-Type': 'application/json'
+  //     }
+  //   })
+  //     .then(this._checkingTheServerResponse)
+  // }
 
   deleteCard(cardId) {
     return fetch(`${this._url}cards/${cardId} `, {
