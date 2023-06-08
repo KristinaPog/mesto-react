@@ -38,7 +38,6 @@ function AddPlacePopup ({isOpen, onClose, onAddPlace}) {
             <input
               type="text"
               name="name"
-              defaultValue=""
               placeholder="Название"
               className="popup__input popup__input_type_place-name"
               id="place-name"
@@ -50,7 +49,6 @@ function AddPlacePopup ({isOpen, onClose, onAddPlace}) {
             <input
               type="url"
               name="link"
-              defaultValue=""
               placeholder="Ссылка на картинку"
               className="popup__input popup__input_type_place-image"
               id="place-image"

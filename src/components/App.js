@@ -57,6 +57,7 @@ function App() {
         setCurrentUser(userInfo);
         closeAllPopups();
       })
+      .catch((error) => { console.log(`Ошибка: ${error}`) })
   }
 
 

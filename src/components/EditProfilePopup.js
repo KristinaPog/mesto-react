@@ -18,12 +18,12 @@ function EditProfilePopup ({isOpen, onClose, onUpdateUser}) {
   React.useEffect(() => {
     setName(currentUser.name);
     setDescription(currentUser.about);
-  }, [currentUser]);
+  }, [currentUser, isOpen]);
 
   function handleSubmit (evt) {
     evt.preventDefault();
     onUpdateUser({
-      name,
+      name: name,
       about: description,
     });
   }
@@ -41,7 +41,7 @@ function EditProfilePopup ({isOpen, onClose, onUpdateUser}) {
               type="text"
               name="name"
               id="name-input"
-              defaultValue={name}
+              value={name || ''}
               onChange={handleCangeName}
               placeholder="Введите имя"
               className="popup__input popup__input_type_name"
@@ -53,7 +53,7 @@ function EditProfilePopup ({isOpen, onClose, onUpdateUser}) {
               type="text"
               name="about"
               id="name-status"
-              defaultValue = {description}
+              value = {description || ''}
               onChange={handleCangeAbout}
               placeholder="Введите статус"
               className="popup__input popup__input_type_status"
